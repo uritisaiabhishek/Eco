@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  background-color: #f5f5f5;
+  margin-top: 70px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body header {
+  background-color: #fff;
+}
+
+body header .search_form {
+  position: relative;
+  width: 50%;
+}
+
+@media screen and (max-width: 992px) {
+  body header .search_form {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+body header .search_form input {
+  width: 100%;
+  z-index: 2;
+  height: 40px;
+  padding: 5px 50px 5px 10px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+body header .search_form button {
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  z-index: 3;
+  top: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+body header .nav-item {
+  margin: 0 5px;
+}
+
+body header .login_nav_link {
+  border-radius: 5px;
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+}
+
+body header .login_nav_link:hover {
+  background-color: rgba(59, 73, 223, 0.1);
+  color: #3b49df;
+  text-decoration: underline;
+  border-color: rgba(59, 73, 223, 0.1);
+}
+
+body header .btn-outline-primary {
+  font-weight: 500;
+}
+
+body header .btn-outline-primary:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+body aside {
+  width: 280px;
+}
+
+body aside input {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+body aside ul li {
+  border-radius: 5px;
+  padding: 15px 20px 15px 10px;
+  margin: 5px 0px;
+}
+
+body aside ul li + .active {
+  background-color: #fff;
+  font-weight: 600;
+}
+
+body aside ul li:hover {
+  background-color: rgba(59, 73, 223, 0.1);
+}
+
+body aside ul li:hover a {
+  color: #2f3ab2;
+}
+
+body aside ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+body main .post_card a {
+  text-decoration: none;
+}
+
+body main .post_card .post_title {
+  width: calc(100% - 15px);
+  line-height: 1.5rem;
+}
+
+body main .post_card .post_title a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+}
+
+body main .post_card .post_title a:hover {
+  color: #3b49df;
+}
+
+body main .post_card .listing__date {
+  width: 100%;
+  padding: 10px 0;
+}
+
+body main .post_card .tags_lists .badge span {
+  font-size: .6rem;
+}
+
+body main .post_card .tags_lists .badge::before {
+  content: '#';
+}
+
+body main .post_card .post_author_info {
+  height: 32px;
+}
+
+body main .post_card .post_author_info .author_image {
+  border-radius: 50%;
+}
+
+body main .post_card .post_author_info .author_name {
+  text-decoration: none;
+  line-height: 1rem;
+}
+
+body main .post_card .post_author_info .author_tag {
+  text-decoration: none;
+  line-height: 1rem;
+  font-size: .7rem;
+}
+
+body main .post_card button {
+  top: 20px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+body main .login_card {
+  max-width: 600px;
+  margin: auto;
+}
+
+body main .login_card button {
+  width: 100%;
+  margin: 2px auto;
+}
+
+body footer {
+  background-color: #d4d4d4;
+}
+/*# sourceMappingURL=style.css.map */
