@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+$twitter-bg : #1da1f2;
+$github-bg : #24292e;
+$facebook-bg : #1877f2;
+
+.small-container{
+    width: 60%;
+    margin: auto;
+}
 
 body{
     background-color: #f5f5f5;
@@ -56,6 +64,7 @@ body{
     }
     aside{
         width: 280px;
+        min-height: max-content;
         input{
             height: 40px;
             margin-bottom: 20px;
@@ -80,6 +89,22 @@ body{
                     color: #000;
                 }
             }
+        }
+    }
+    
+    .post_author_info{
+        height: 32px;
+        .author_image{
+            border-radius: 50%;
+        }
+        .author_name{
+            text-decoration: none;
+            line-height: 1rem;
+        }
+        .author_tag{
+            text-decoration: none;
+            line-height: 1rem;
+            font-size: .7rem;
         }
     }
     main{
@@ -114,21 +139,6 @@ body{
                     }
                 }
             }
-            .post_author_info{
-                height: 32px;
-                .author_image{
-                    border-radius: 50%;
-                }
-                .author_name{
-                    text-decoration: none;
-                    line-height: 1rem;
-                }
-                .author_tag{
-                    text-decoration: none;
-                    line-height: 1rem;
-                    font-size: .7rem;
-                }
-            }
             button{
                 top: 20px;
                 right: 10px;
@@ -136,14 +146,124 @@ body{
                 border: none;
                 outline: none;
             }
+            .post_reaction{
+                .reactions_container{
+                    .likes{
+                        .fa{
+                            color: #fff;
+                            filter: drop-shadow(1px 1px 1px #000);
+                        }
+                    }
+                    .comments{
+                        .fa{
+                            color: #fff;
+                            filter: drop-shadow(1px 1px 1px #000);
+                        }
+                    }
+                }
+            }
         }
         .login_card{
             max-width: 600px;
+            padding: 1.5rem;
             margin: auto;
             button{
                 width: 100%;
-                margin: 2px auto;
+                margin: 5px;
+                padding: 10px;
+                // text-align: left;
             }
+            .social_logins{
+                h2{
+                    font-size: 1.87rem;
+                    text-align: center;
+                    line-height: 1.25rem;
+                }
+                p{
+                    text-align: center;
+                    a{
+                        font-size: 1rem;
+                    }
+                }
+                .facebook_btn{
+                    background-color: $facebook-bg;
+                    border-color: $facebook-bg;
+                }
+                .github_btn{
+                    background-color: $github-bg;
+                    border-color: $github-bg;
+                }
+                .twitter_btn{
+                    background-color: $twitter-bg;
+                    border-color: $twitter-bg;
+                }
+                button{
+                    .fab{
+                        margin-right: 5px;
+                    }
+                }
+                .tagline{
+                    text-align: center;
+                    padding: 0;
+                    span{
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .profile_section{
+        padding: 0 0 20px 0;
+        .profile_background{
+        }
+        .profile_card{
+            background-color: #fff;
+            max-width: 60%;
+            margin: -50px auto 0px auto;
+            border-radius: 10px;
+            padding: 50px;
+            .profile_image{
+                position: absolute;
+                top: calc(-150px/2);
+                width: 150px;
+                height: 150px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #000;
+                padding: 3px;
+                border-radius: 50%;
+                img{
+                    border-radius: 50%;
+                    max-width: 100%;
+                }
+            }
+            .profile_details{
+                display: flex;
+                justify-content: center;
+                .fa{
+                    margin-right: 3px;
+                }
+                .location{}
+                .birthday{
+                    margin-left: 15px;
+                }
+                .github_link{
+                    margin-left: 15px;
+
+                }
+            }
+        }
+        aside{
+            width: 400px;
+            margin-right: 10px;
+            .profile_left_card{
+                .card-header{
+                    background-color: #fff;
+                }
+            }
+        }
+        .posts_lists{
+            width: 100%;
         }
     }
     footer{

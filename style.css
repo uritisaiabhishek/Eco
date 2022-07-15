@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.small-container {
+  width: 60%;
+  margin: auto;
+}
+
 body {
   background-color: #f5f5f5;
   margin-top: 70px;
@@ -69,6 +74,9 @@ body header .btn-outline-primary:hover {
 
 body aside {
   width: 280px;
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
 }
 
 body aside input {
@@ -98,6 +106,25 @@ body aside ul li:hover a {
 body aside ul li a {
   text-decoration: none;
   color: #000;
+}
+
+body .post_author_info {
+  height: 32px;
+}
+
+body .post_author_info .author_image {
+  border-radius: 50%;
+}
+
+body .post_author_info .author_name {
+  text-decoration: none;
+  line-height: 1rem;
+}
+
+body .post_author_info .author_tag {
+  text-decoration: none;
+  line-height: 1rem;
+  font-size: .7rem;
 }
 
 body main .post_card a {
@@ -133,25 +160,6 @@ body main .post_card .tags_lists .badge::before {
   content: '#';
 }
 
-body main .post_card .post_author_info {
-  height: 32px;
-}
-
-body main .post_card .post_author_info .author_image {
-  border-radius: 50%;
-}
-
-body main .post_card .post_author_info .author_name {
-  text-decoration: none;
-  line-height: 1rem;
-}
-
-body main .post_card .post_author_info .author_tag {
-  text-decoration: none;
-  line-height: 1rem;
-  font-size: .7rem;
-}
-
 body main .post_card button {
   top: 20px;
   right: 10px;
@@ -160,14 +168,134 @@ body main .post_card button {
   outline: none;
 }
 
+body main .post_card .post_reaction .reactions_container .likes .fa {
+  color: #fff;
+  -webkit-filter: drop-shadow(1px 1px 1px #000);
+          filter: drop-shadow(1px 1px 1px #000);
+}
+
+body main .post_card .post_reaction .reactions_container .comments .fa {
+  color: #fff;
+  -webkit-filter: drop-shadow(1px 1px 1px #000);
+          filter: drop-shadow(1px 1px 1px #000);
+}
+
 body main .login_card {
   max-width: 600px;
+  padding: 1.5rem;
   margin: auto;
 }
 
 body main .login_card button {
   width: 100%;
-  margin: 2px auto;
+  margin: 5px;
+  padding: 10px;
+}
+
+body main .login_card .social_logins h2 {
+  font-size: 1.87rem;
+  text-align: center;
+  line-height: 1.25rem;
+}
+
+body main .login_card .social_logins p {
+  text-align: center;
+}
+
+body main .login_card .social_logins p a {
+  font-size: 1rem;
+}
+
+body main .login_card .social_logins .facebook_btn {
+  background-color: #1877f2;
+  border-color: #1877f2;
+}
+
+body main .login_card .social_logins .github_btn {
+  background-color: #24292e;
+  border-color: #24292e;
+}
+
+body main .login_card .social_logins .twitter_btn {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+}
+
+body main .login_card .social_logins button .fab {
+  margin-right: 5px;
+}
+
+body main .login_card .social_logins .tagline {
+  text-align: center;
+  padding: 0;
+}
+
+body main .login_card .social_logins .tagline span {
+  background-color: #fff;
+}
+
+body .profile_section {
+  padding: 0 0 20px 0;
+}
+
+body .profile_section .profile_card {
+  background-color: #fff;
+  max-width: 60%;
+  margin: -50px auto 0px auto;
+  border-radius: 10px;
+  padding: 50px;
+}
+
+body .profile_section .profile_card .profile_image {
+  position: absolute;
+  top: calc(-150px/2);
+  width: 150px;
+  height: 150px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #000;
+  padding: 3px;
+  border-radius: 50%;
+}
+
+body .profile_section .profile_card .profile_image img {
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+body .profile_section .profile_card .profile_details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .profile_section .profile_card .profile_details .fa {
+  margin-right: 3px;
+}
+
+body .profile_section .profile_card .profile_details .birthday {
+  margin-left: 15px;
+}
+
+body .profile_section .profile_card .profile_details .github_link {
+  margin-left: 15px;
+}
+
+body .profile_section aside {
+  width: 400px;
+  margin-right: 10px;
+}
+
+body .profile_section aside .profile_left_card .card-header {
+  background-color: #fff;
+}
+
+body .profile_section .posts_lists {
+  width: 100%;
 }
 
 body footer {
