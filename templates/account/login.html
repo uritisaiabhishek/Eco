@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+{% block body %}
+<div class="container py-4 mt-5">
+  <main class="">
+    <div class="login_card card">
+        <div class="card-body">
+            <form method="POST">
+              {% csrf_token %}
+                <label for="username" class="form-label">username</label>
+                <input type="text" name="username" id="username" class="form-control" placeholder="username" />
+                
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Your password" />
+                
+                <input type="checkbox" class="form-checkbox" name="login_remember" id="login_remember" checked />
+                <label for="login_remember" class="form-label">Rember me</label>
+                
+                <button type="submit" class="btn btn-primary">Login</button>
+                
+                <small class=""><a href="#">i forgot my password</a></small>
+            </form>
+        </div>
+    </div>
+  </main>
+</div>
+{% endblock body %}

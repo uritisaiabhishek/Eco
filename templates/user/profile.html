@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+
+{% block title %}{{username}}{% endblock title %}
+
+{% block body %}
+  <main class="profile_section">
+      <div class="jumbotron profile_background">
+        <img src="https://dummyimage.com/16:3x1080/" class="img-fluid" alt="">
+      </div>
+      <div class="profile_card position-relative">
+          <div class="profile_image">
+            <img src="https://dummyimage.com/16:16x150/" class="" alt="">
+          </div>
+          <div class="w-100 mt-5 text-end">
+              <button class="btn btn-primary text-capitalize">follow</button>
+              <button class="btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" class="crayons-icon" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M7 12a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0zm5 2a2 2 0 100-4 2 2 0 000 4z"></path>
+                  </svg>
+              </button>
+          </div>
+          <h3 class="profile_title mt-2 text-center"><a class="text-decoration-none text-dark fw-bold" href="#">{{request.user}}</a></h3>
+          <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, corporis.</p>
+          <div class="profile_details">
+              <div class="location"><div class="fa fa-map-marker"></div> visakhapatnam</div>
+              <div class="birthday"><div class="fa fa-birthday-cake"></div> 25 Aug 2022</div>
+              <div class="github_link"><div class="fa fa-external-link"></div> https://www.google.com/username</div>
+          </div>
+      </div>
+      <div class="small-container my-2">
+          <div class="d-flex">
+              <aside>
+                  <div class="card profile_left_card mb-2">
+                      <div class="card-header fw-bold">Title</div>
+                      <div class="card-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, itaque.</div>
+                  </div>
+                  <div class="card profile_left_card mb-2">
+                      <div class="card-header fw-bold">Title</div>
+                      <div class="card-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, itaque.</div>
+                  </div>
+                  <div class="card profile_left_card mb-2">
+                      <div class="card-header fw-bold">Title</div>
+                      <div class="card-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, itaque.</div>
+                  </div>
+              </aside>
+              <div class="posts_lists">
+                  {% if user.is_authenticated %}
+                    <div class="card mb-2">
+                      <div class="card-header">Add New Post</div>
+                      <div class="card-body p-4 pt-3">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="text" class="form-control mb-2" value="sometitle" placeholder="post title" />
+                            <div class="form-group mb-2">
+                              <select class="form-select" aria-label="category_select">
+                                <option >Select Category</option>
+                                <option selected value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+                            <input type="text" class="form-control mb-2" placeholder="add tags seperate by comma" />
+                            <div class="input-group mb-2">
+                              <input type="file" class="form-control" name="post_image" />
+                            </div>
+                            <textarea class="form-control mb-2" name="post_content" rows="5" placeholder="post content">some content comes here</textarea>
+                            <a href="home_page" type="submit" class="btn btn-primary w-100">Add Post</a>
+                        </form>
+                      </div>
+                    </div>
+                  {% endif %}
+                  <div class="card post_card mb-2">
+                      <div class="card-body p-4 pt-3">
+                        <div class="post_title">
+                          <a href="#">
+                            I'll design Awesome Blog Banners for your Technical Blogs
+                          </a>
+                        </div>
+                        <div class="listing__date">
+                          <time datetime="Sun Jul 10 2022 18:15:20 GMT+0530 (India Standard Time)" title="Sunday, 10 July, 2022 at 6:15:20 pm">10 Jul</time>
+                        </div>
+                        <div class="tags_lists d-flex w-100 flex-wrap mb-3">
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                        </div>
+                        <button class="position-absolute" type="button"  id="post_option_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                          <svg width="24" height="24" viewBox="0 0 24 24" class="crayons-icon" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7 12a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0zm5 2a2 2 0 100-4 2 2 0 000 4z"></path>
+                          </svg>
+                        </button>
+                        <div class="dropdown">                
+                          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="post_option_dropdown">
+                            <li><a class="dropdown-item" href="#">Report Abuse</a></li>
+                          </ul>
+                        </div>
+                        <p>Hey there,<br>
+                          I've started freelancing and provide Blog Banner Design as a service.<br>
+                          If you want Blog Banners for your technical articles try out my service.
+                        </p>
+                        <p>Freelance Gig: <a href="#">https://www.fiverr.com/devatharva/create-stunning-blog-banner-for-your-technical-articles</a></p>
+                        <p>You can check out my gig for offerings and details.</p>
+                        <hr>
+                        <div class="post_reaction mt-3">
+                          <div class="reactions_container d-flex align-items-center">
+                              <div class="likes me-3">
+                                  <div class="fa fa-heart me-1"></div>
+                                  <span>6</span>&nbsp; Reactions
+                              </div>
+                              <div class="comments">
+                                  <div class="fa fa-comments me-1"></div>
+                                  <span>6</span>&nbsp; Add Comment
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="card post_card mb-2">
+                      <div class="card-body p-4 pt-3">
+                        <div class="post_title">
+                          <a href="#">
+                            I'll design Awesome Blog Banners for your Technical Blogs
+                          </a>
+                        </div>
+                        <div class="listing__date">
+                          <time datetime="Sun Jul 10 2022 18:15:20 GMT+0530 (India Standard Time)" title="Sunday, 10 July, 2022 at 6:15:20 pm">10 Jul</time>
+                        </div>
+                        <div class="tags_lists d-flex w-100 flex-wrap mb-3">
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                        </div>
+                        <button class="position-absolute" type="button"  id="post_option_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                          <svg width="24" height="24" viewBox="0 0 24 24" class="crayons-icon" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7 12a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0zm5 2a2 2 0 100-4 2 2 0 000 4z"></path>
+                          </svg>
+                        </button>
+                        <div class="dropdown">                
+                          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="post_option_dropdown">
+                            <li><a class="dropdown-item" href="#">Report Abuse</a></li>
+                          </ul>
+                        </div>
+                        <p>Hey there,<br>
+                          I've started freelancing and provide Blog Banner Design as a service.<br>
+                          If you want Blog Banners for your technical articles try out my service.
+                        </p>
+                        <p>Freelance Gig: <a href="#">https://www.fiverr.com/devatharva/create-stunning-blog-banner-for-your-technical-articles</a></p>
+                        <p>You can check out my gig for offerings and details.</p>
+                        <hr>
+                        <div class="post_reaction mt-3">
+                          <div class="reactions_container d-flex align-items-center">
+                              <div class="likes me-3">
+                                  <div class="fa fa-heart me-1"></div>
+                                  <span>6</span>&nbsp; Reactions
+                              </div>
+                              <div class="comments">
+                                  <div class="fa fa-comments me-1"></div>
+                                  <span>6</span>&nbsp; Add Comment
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="card post_card mb-2">
+                      <div class="card-body p-4 pt-3">
+                        <div class="post_title">
+                          <a href="#">
+                            I'll design Awesome Blog Banners for your Technical Blogs
+                          </a>
+                        </div>
+                        <div class="listing__date">
+                          <time datetime="Sun Jul 10 2022 18:15:20 GMT+0530 (India Standard Time)" title="Sunday, 10 July, 2022 at 6:15:20 pm">10 Jul</time>
+                        </div>
+                        <div class="tags_lists d-flex w-100 flex-wrap mb-3">
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                          <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                        </div>
+                        <button class="position-absolute" type="button"  id="post_option_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                          <svg width="24" height="24" viewBox="0 0 24 24" class="crayons-icon" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7 12a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0zm5 2a2 2 0 100-4 2 2 0 000 4z"></path>
+                          </svg>
+                        </button>
+                        <div class="dropdown">                
+                          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="post_option_dropdown">
+                            <li><a class="dropdown-item" href="#">Report Abuse</a></li>
+                          </ul>
+                        </div>
+                        <p>Hey there,<br>
+                          I've started freelancing and provide Blog Banner Design as a service.<br>
+                          If you want Blog Banners for your technical articles try out my service.
+                        </p>
+                        <p>Freelance Gig: <a href="#">https://www.fiverr.com/devatharva/create-stunning-blog-banner-for-your-technical-articles</a></p>
+                        <p>You can check out my gig for offerings and details.</p>
+                        <hr>
+                        <div class="post_reaction mt-3">
+                          <div class="reactions_container d-flex align-items-center">
+                              <div class="likes me-3">
+                                  <div class="fa fa-heart me-1"></div>
+                                  <span>6</span>&nbsp; Reactions
+                              </div>
+                              <div class="comments">
+                                  <div class="fa fa-comments me-1"></div>
+                                  <span>6</span>&nbsp; Add Comment
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </main>
+{% endblock body %}

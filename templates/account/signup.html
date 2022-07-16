@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}signup - eco{% endblock title %}
+
+{% block body %}
+
+<div class="container py-4 mt-5">
+    <main class="">
+        <div class="login_card card">
+            <div class="card-body">
+              <form method="POST">
+                    {% csrf_token %}
+                  <label for="signup_username" class="form-label">Username</label>
+                  <input type="text" name="signup_username" id="signup_username" class="form-control" placeholder="User name" />
+                  
+                  <label for="signup_email" class="form-label">Email</label>
+                  <input type="email" name="signup_email" id="signup_email" class="form-control" placeholder="Email Address" />
+                  
+                  <label for="signup_password" class="form-label">Password</label>
+                  <input type="password" name="signup_password" id="signup_password" class="form-control" placeholder="Your password" />
+                  
+                  <label for="confirm_signup_password" class="form-label">confirm Password</label>
+                  <input type="text" name="confirm_signup_password" id="confirm_signup_password" class="form-control" placeholder="Confirm Your password" />
+                  
+                  <button type="submit" class="btn btn-primary">Create Account</button>
+              </form>
+          </div>
+      </div>
+    </main>
+</div>
+
+
+{% endblock body %}

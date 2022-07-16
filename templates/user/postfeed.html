@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block title %}{{username}}{% endblock title %}
+
+{% block body %}
+
+  <div class="container py-4 mt-5">
+    <aside class="float-start">
+      <input type="search" class="form-control" placeholder="search..." />
+      
+      <ul class="list-unstyled">
+        <li class="">
+          <a class="" href="#">All Listings</a>
+        </li>
+        <li class="active">
+          <a class="" href="#">Contributors/Collaborators Wanted</a>
+        </li>
+        <li class="">
+          <a class="" href="#">Conference CFP</a>
+        </li>
+        <li class="">
+          <a class="" href="#">Available for Hire</a>
+        </li>
+        <li class="">
+          <a class="" href="#">Education/Courses</a>
+        </li>
+        <li class="">
+          <a class="" href="#">Job Listings</a>
+        </li>
+        <li class="">
+          <a class="" href="#">Offering Mentorship</a>
+        </li>
+        <li class="">
+          <a class="" href="#">Seeking Mentorship</a>
+        </li>
+      </ul>
+    </aside>
+    <main class="">
+      <div class="row" data-masonry="{&quot;percentPosition&quot;: true }">
+        
+        {% if user.is_authenticated %}
+          <div class="col-sm-12 col-lg-12 mb-4">
+            <div class="card">
+              <div class="card-header">Add New Post</div>
+              <div class="card-body p-4 pt-3">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="text" class="form-control mb-2" value="sometitle" placeholder="post title" />
+                    <div class="form-group mb-2">
+                      <select class="form-select" aria-label="category_select">
+                        <option >Select Category</option>
+                        <option selected value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                    <input type="text" class="form-control mb-2" placeholder="add tags seperate by comma" />
+                    <div class="input-group mb-2">
+                      <input type="file" class="form-control" name="post_image" />
+                    </div>
+                    <textarea class="form-control mb-2" name="post_content" rows="5" placeholder="post content">some content comes here</textarea>
+                    <a href="home_page" type="submit" class="btn btn-primary w-100">Add Post</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        <div class="col-sm-6 col-lg-6 mb-4">
+          <div class="card post_card">
+            <div class="card-body p-4 pt-3">
+              <div class="post_title">
+                <a href="#">
+                  I'll design Awesome Blog Banners for your Technical Blogs
+                </a>
+              </div>
+              <div class="listing__date">
+                <time datetime="Sun Jul 10 2022 18:15:20 GMT+0530 (India Standard Time)" title="Sunday, 10 July, 2022 at 6:15:20 pm">10 Jul</time>
+              </div>
+              <div class="tags_lists d-flex w-100 flex-wrap mb-3">
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">tag</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">new</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">another</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+                <div class="badge bg-secondary me-1 mb-1 d-flex align-items-center">other</div>
+              </div>
+              <button class="position-absolute" type="button"  id="post_option_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" class="crayons-icon" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7 12a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0zm5 2a2 2 0 100-4 2 2 0 000 4z"></path>
+                </svg>
+              </button>
+              <div class="dropdown">                
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="post_option_dropdown">
+                  <li><a class="dropdown-item" href="#">Report Abuse</a></li>
+                </ul>
+              </div>
+              <p>Hey there,<br>
+                I've started freelancing and provide Blog Banner Design as a service.<br>
+                If you want Blog Banners for your technical articles try out my service.
+              </p>
+              <p>Freelance Gig: <a href="#">https://www.fiverr.com/devatharva/create-stunning-blog-banner-for-your-technical-articles</a></p>
+              <p>You can check out my gig for offerings and details.</p>
+              <div class="post_author_info">
+                <a href="#" class="float-start">
+                  <img class="author_image" src="https://res.cloudinary.com/practicaldev/image/fetch/s--Yx3j7D69--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/669994/3d16dc0e-6d1f-4d30-a489-9d6b916d7297.jpg" alt="Atharva Shirdhankar" width="32" height="32" loading="lazy">
+                </a>
+                <div class="d-flex flex-column ps-2">
+                  <a href="#" class="author_name text-dark">Atharva Shirdhankar</a>
+                  <a href="#" class="author_tag text-secondary">forhire</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+{% endblock body %}
