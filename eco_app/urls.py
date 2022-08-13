@@ -24,4 +24,10 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('user/', include('user.urls')),
     path('',views.home, name="home_page"),
+    path('post/<str:postslug>',views.post_view),
+    path('post/delete/<int:pk>',views.delete_view),
+    path('post/comment/delete/<int:pk>',views.comment_delete_view),
+    path('category/<str:cat>',views.post_by_category, name="post_by_category"),
+    path('search/',views.post_by_search, name="post_by_search"),
+    path('post/like/<int:pk>',views.like_post, name="like_post"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

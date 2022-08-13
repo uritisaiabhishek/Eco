@@ -74,9 +74,6 @@ body header .btn-outline-primary:hover {
 
 body aside {
   width: 280px;
-  min-height: -webkit-max-content;
-  min-height: -moz-max-content;
-  min-height: max-content;
 }
 
 body aside input {
@@ -125,6 +122,10 @@ body .post_author_info .author_tag {
   text-decoration: none;
   line-height: 1rem;
   font-size: .7rem;
+}
+
+body main {
+  min-height: calc( 100vh);
 }
 
 body main .post_card a {
@@ -238,6 +239,20 @@ body .profile_section {
   padding: 0 0 20px 0;
 }
 
+body .profile_section .profile_background {
+  max-height: 250px;
+}
+
+body .profile_section .profile_background img {
+  min-height: 300px;
+  max-height: 50vh;
+  min-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center bottom;
+     object-position: center bottom;
+}
+
 body .profile_section .profile_card {
   background-color: #fff;
   max-width: 60%;
@@ -262,6 +277,7 @@ body .profile_section .profile_card .profile_image {
 body .profile_section .profile_card .profile_image img {
   border-radius: 50%;
   max-width: 100%;
+  min-height: 100%;
 }
 
 body .profile_section .profile_card .profile_details {

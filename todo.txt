@@ -1,0 +1,13 @@
+sign up bug
+
+edit user account
+
+forget password and change password
+
+edit post
+
+like post
+
+unlike post
+
+edit comment
