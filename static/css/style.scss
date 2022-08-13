@@ -64,7 +64,6 @@ body{
     }
     aside{
         width: 280px;
-        min-height: max-content;
         input{
             height: 40px;
             margin-bottom: 20px;
@@ -108,6 +107,7 @@ body{
         }
     }
     main{
+        min-height: calc( 100vh );
         .post_card{
             a{
                 text-decoration: none;
@@ -215,6 +215,14 @@ body{
     .profile_section{
         padding: 0 0 20px 0;
         .profile_background{
+            max-height: 250px;
+            img{
+                min-height: 300px;
+                max-height: 50vh;
+                min-width: 100%;
+                object-fit: cover;
+                object-position: center bottom;
+            }
         }
         .profile_card{
             background-color: #fff;
@@ -235,6 +243,7 @@ body{
                 img{
                     border-radius: 50%;
                     max-width: 100%;
+                    min-height: 100%;
                 }
             }
             .profile_details{
