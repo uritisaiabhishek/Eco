@@ -31,3 +31,12 @@ Index page -->
 Email Template -- >>> beta 1
 
 -->  Posts in Homepage Depending of following users, tags
+
+Backlogs: 
+    sign up bug
+    edit user account
+    forget password and change password
+    edit post
+    like post
+    unlike post
+    edit comment 
